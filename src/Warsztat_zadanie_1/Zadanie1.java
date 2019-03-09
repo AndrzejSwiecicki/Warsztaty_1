@@ -7,12 +7,11 @@ import java.util.Scanner;
 public class Zadanie1 {
     public static void main(String[] args) {
 
-
         //losowanie liczby
         Random rnd = new Random();
-        int r = rnd.nextInt(3);
+        int r = rnd.nextInt(100);
 
-        int liczba =0;
+        int liczba = 0;
         do {
             Scanner scan = new Scanner(System.in);
             System.out.println("Zgadnij liczbę: ");
@@ -22,11 +21,11 @@ public class Zadanie1 {
                 }
             liczba = scan.nextInt();
             if (liczba>r){
-                System.out.println("Podałeś za dużą liczbę");
+                System.out.println("Podałeś za dużą liczbę !");
             } else if(liczba<r){
-                System.out.println("Podałeś za małą liczbę");
+                System.out.println("Podałeś za małą liczbę !");
             }else {
-                System.out.println("zgadłeś");
+                System.out.println("Zgadłeś");
             }
 
         }while (liczba != r);
