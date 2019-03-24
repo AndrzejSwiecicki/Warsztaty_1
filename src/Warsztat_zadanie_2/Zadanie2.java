@@ -7,26 +7,26 @@ import java.util.Scanner;
 public class Zadanie2 {
     public static void main(String[] args) {
 
-        int[] userNumbers = getNumbersFromUser();
+        int [] userNumbers = getNumbersFromUser();
         Integer [] randomNumbers = getRandomNumbers();
         checkUserWin(userNumbers, randomNumbers);
-
-        System.out.println(Arrays.toString(getRandomNumbers()));
-      //  System.out.println(Arrays.toString(checkUserWin()));
+        System.out.println(Arrays.toString(randomNumbers));
 
        }
         private static void checkUserWin (int [] userNumbers, Integer[]randomNumbers) {
             int count = 0;
             for (int i = 0; i < 6; i++) {
                 for (int j = 0; j < 6; j++) {
-                    if (userNumbers[i] == randomNumbers[j]) {
+                    if (userNumbers[i]==randomNumbers[j]) {
                         count++;
                     }
                 }
             }
 
             if (count > 3) {
-                System.out.print("trafiles" + count + "liczb");
+                System.out.print("trafiles" +" "+ count +" "+ "liczby");
+            }else {
+                System.out.println("nie trafiles, probuj dalej");
             }
         }
             private static Integer[] getRandomNumbers(){
@@ -35,9 +35,9 @@ public class Zadanie2 {
                 for (int i = 0; i < arr.length; i++) {
                     arr[i] = i + 1;
                 }
-                //System.out.println(Arrays.toString(arr));
+               //System.out.println(Arrays.toString(arr));
                 Collections.shuffle(Arrays.asList(arr));
-               // System.out.println(Arrays.toString(arr));
+               //System.out.println(Arrays.toString(arr));
                 return Arrays.copyOf(arr,6);
             }
 
@@ -46,7 +46,7 @@ public class Zadanie2 {
                 int[] numbers = new int[6];
                 int index = 0;
                 while (index < 6) {
-                    System.out.print("Podaj liczbę(" + index + ");");
+                    System.out.print("Podaj liczbę(" + index + "):");
                     while (!scan.hasNextInt()) {
                         scan.nextLine();
                     }
